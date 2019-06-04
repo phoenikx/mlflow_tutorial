@@ -16,7 +16,6 @@ from sklearn.linear_model import ElasticNet
 import mlflow
 import mlflow.sklearn
 
-
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
     mae = mean_absolute_error(actual, pred)
@@ -25,6 +24,7 @@ def eval_metrics(actual, pred):
 
 
 if __name__ == "__main__":
+    mlflow.set_experiment("mlflow_test")
     warnings.filterwarnings("ignore")
     np.random.seed(40)
 
